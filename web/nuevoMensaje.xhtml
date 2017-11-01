@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Autor:" for="autor" />
+                    <h:inputText id="autor" value="#{controladorMensaje.mensaje.autor}" title="Autor" />
+                    <h:outputLabel value="Titulo:" for="titulo" />
+                    <h:inputText id="titulo" value="#{controladorMensaje.mensaje.titulo}" title="Titulo" />
+                    <h:outputLabel value="Contenido:" for="contenido" />
+                    <h:inputTextarea rows="4" cols="30" id="contenido" value="#{controladorMensaje.mensaje.contenido}" title="Contenido" />
+                    <h:outputLabel value="FechaCreacion:" for="fechaCreacion" />
+                    <h:inputText id="fechaCreacion" value="#{controladorMensaje.mensaje.fechaCreacion}" title="FechaCreacion" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="Id:" for="id" />
+                    <h:inputText id="id" value="#{controladorMensaje.mensaje.id}" title="Id" />
+                </h:panelGrid>
+                <h:commandButton value ="Guardar" action="#{controladorMensaje.guardar()}" />
+                <h:button value="Cancelar" outcome="/index.xhtml" />
+            </h:form>
+        </f:view>
+    </h:body>
+
+
+</html>
+

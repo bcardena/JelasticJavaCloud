@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+        
+       
+        
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Lista de Mensajes"/></h1>
+                <h:button value="Nuevo Mensaje" outcome="/nuevoMensaje.xhtml" />
+                <h:dataTable value="#{controladorMensaje.mensajes}" var="item" style="width: 100%;">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Autor"/>
+                            </f:facet>
+                            <h:outputText value="#{item.autor}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Titulo"/>
+                            </f:facet>
+                            <h:outputText value="#{item.titulo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Contenido"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contenido}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="FechaCreacion"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaCreacion}">
+                                <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Id"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                    </h:dataTable>
+            </h:form>
+        </f:view>
+    </h:body>
+    
+    
+</html>
+
